@@ -3,8 +3,10 @@ This is the easiest way to de-identify license plates.
 
 ## Method
 1. Using pretrained yolo4 model, find car, truck, bus and train. (In my test video, the pretrained yolo model sometimes predicts truck as train.)
-2. Blur the lower part of the bounding box to de-identify the license plate.
+2. Blur the lower part of the bounding box to de-identify the license plate. (If you want to see the result of this method, click the below image. It will leads you to the result video on YouTube.)
+
 [![Video Label](http://img.youtube.com/vi/nnon9gknHWU/0.jpg)](https://youtu.be/nnon9gknHWU?t=0s)
+
 3. Even if the license plate is de-identified in this way, it does not have a significant effect on learning or referencing by deep learning.
 
 * [Left image] After blurring the license plate using the proposed method, the result of the yolo model inference.
