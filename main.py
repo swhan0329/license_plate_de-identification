@@ -38,17 +38,16 @@ while(cap.isOpened()):
                     blur_area = frame[bbox[i][3]-blur_h:bbox[i][3]+int(blur_h/3),bbox[i][0]:bbox[i][2]]
                     blur_img = cv2.blur(blur_area, (7,7))
                     frame[bbox[i][3]-blur_h:bbox[i][3]+int(blur_h/3),bbox[i][0]:bbox[i][2]] = blur_img
-        # draw bounding box over detected objects (검출된 물체 가장자리에 바운딩 박스 그리기)
-        # frame = draw_bbox(frame, bbox, label, conf, write_conf=True)
+        # draw bounding box over detected objects
+        frame = draw_bbox(frame, bbox, label, conf, write_conf=True)
 
         # display output
-        # cv2.namedWindow('frame',cv2.WINDOW_NORMAL)
-        # cv2.resizeWindow('frame',1100,1500)
-        # cv2.imshow("frame", frame)
-        out.write(frame)
-        # cv2.waitKey(1)  
-        # if cv2.waitKey(0) & 0xFF == ord('q'):
-        #     break
+        cv2.namedWindow('frame',cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('frame',1100,1500)
+        cv2.imshow("frame", frame)
+        out.write(frame) 
+        if cv2.waitKey(0) & 0xFF == ord('q'):
+            break
     else:
         break 
        
